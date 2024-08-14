@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+h1 {
+    margin-bottom: 20px;
+}
+img {
+    width: 200px;
+    height: auto;
+}
+
+.text-border {
+    position: relative;
+    padding: 20px;
+    margin: 50px;
+    text-align: center;
+}
+
+.text-border::before,
+.text-border::after {
+    content: "\4E\69\63\65\20\74\72\79\20\62\75\74\20\74\68\69\73\20\69\73\20\6E\6F\74\20\74\68\65\20\6D\65\73\73\61\67\65\20\65\69\74\68\65\72\21";
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1px;
+}
+
+.text-border::before {
+    top: 20px;
+    left: 0;
+    transform: translateY(-100%);
+}
+
+.text-border::after {
+    bottom: 24px;
+    left: 0;
+    transform: translateY(100%);
+}
+
+.text-border::before::before,
+.text-border::before::after,
+.text-border::after::before,
+.text-border::after::after {
+    content: "\4E\69\63\65\20\74\72\79\20\62\75\74\20\74\68\69\73\20\69\73\20\6E\6F\74\20\74\68\65\20\6D\65\73\73\61\67\65\20\65\69\74\68\65\72\21";
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1px;
+}
+
+.text-border::before::before,
+.text-border::after::before {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.text-border::before::after {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.text-border::after::after {
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%) translateY(100%);
+}
